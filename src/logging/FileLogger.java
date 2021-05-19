@@ -1,74 +1,129 @@
 package logging;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileLogger implements ILogger {
-    FileWriter file_log;
+    BufferedWriter file_log = null;
 
     public FileLogger(String file_name)
     {
         try
         {
-         file_log = new FileWriter(file_name);
+            file_log = new BufferedWriter(new FileWriter(file_name));
         } catch (IOException e)
-            {
-                 System.out.println("Error!");
-                 e.printStackTrace();
-            }
+        {
+            e.printStackTrace();
+        }
     }
 
-    public void write(long param)
+
+    public void write(long parameter)
     {
         try
         {
-            file_log.write(String.valueOf(param));
-        } catch (IOException e)
-            {
-                System.out.println("Error!");
-                e.printStackTrace();
-            }
-
-    }
-
-    public void write(String param)
-    {
-        try
-        {
-            file_log.write(param);
+            file_log.write(parameter + "\n");
         } catch (IOException e)
         {
             System.out.println("Error!");
             e.printStackTrace();
         }
+
     }
+
+
+    public void write(String s)
+    {
+        try
+        {
+            file_log.write(s);
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
     public void write(Object ... value)
     {
+        String s = "";
+
+        for(Object i: value)
+        {
+            s = s + i.toString();
+        }
         try
         {
-            for(Object i: value)
-            {
-                file_log.write(i.toString());
-                file_log.write(" ");
-            }
-        } catch (IOException e)
+            file_log.write(s);
+        }
+        catch (IOException e)
         {
-            System.out.println("Error!");
             e.printStackTrace();
         }
     }
+
 
     public void close()
     {
         try
         {
             file_log.close();
-        } catch (IOException e)
-            {
-                System.out.println("Error!");
-                e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeTime(long parameter, TimeUnit time)
+    {
+        try {
+            switch (time) {
+                case Nano:
+                    file_log.write(parameter + "Nano");
+                    break;
+                case Micro:
+                    file_log.write(parameter / Math.pow(10, 3) + "Micro");
+                    break;
+                case Milli:
+                    file_log.write(parameter / Math.pow(10, 6) + "Milli");
+                    break;
+                case Sec:
+                    file_log.write(parameter / Math.pow(10, 9) + "Sec");
+                    break;
             }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+    public void writeTime(String s, long parameter, TimeUnit time)
+    {
+        try {
+            switch (time) {
+                case Nano:
+                    file_log.write(s + "" + parameter + "Nano");
+                    break;
+                case Micro:
+                    file_log.write(s + "" + parameter / Math.pow(10, 3) + "Micro");
+                    break;
+                case Milli:
+                    file_log.write(s + "" + parameter / Math.pow(10, 6) + "Milli");
+                    break;
+                case Sec:
+                    file_log.write(s + "" + parameter / Math.pow(10, 9) + "Sec");
+                    break;
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
 }
