@@ -1,3 +1,5 @@
+import testbench.TestNewtonSquareRoot;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +26,7 @@ public class Main {
 	}
 
 	private void initialize() {
+		TestNewtonSquareRoot testing=new TestNewtonSquareRoot();
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(25, 122, 120));
 		//frame.getContentPane().setForeground(new Color(199, 10, 10));
