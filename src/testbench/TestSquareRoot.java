@@ -16,7 +16,8 @@ public class TestSquareRoot {
         int nr_cores=Runtime.getRuntime().availableProcessors();
         NewtonSquareRoot bench = new NewtonSquareRoot();
 
-        bench.initialize(8);
+        bench.initialize(Runtime.getRuntime().availableProcessors());
+        bench.warmUp();
         timer.start();
         bench.run();
         long time = timer.stop();

@@ -18,6 +18,7 @@ public class TestPopulateArray {
         timer.start();
         bench.run();
         long time= timer.stop();
+
         System.out.println("Tested in "+time/Math.pow(10, 9)+" seconds");
     }
 }

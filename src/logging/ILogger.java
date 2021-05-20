@@ -2,11 +2,16 @@ package logging;
 
 public interface ILogger {
 
-    public void write(String string);
+    void write(long l);
 
-    public void write(long value);
+    void write(String s);
 
-    public void write(Object ... values);
+    void write(Object ...objects);
 
-    public void close();
+    void close();
+
+    void writeTime(long value, TimeUnit unit);
+
+    void writeTime(String string, long value, TimeUnit unit);
+
 }

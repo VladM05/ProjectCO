@@ -11,6 +11,7 @@ public class TestFFT {
 		IBenchmark bench = new FFT();
 		
 		bench.initialize(1048576);
+		bench.warmUp();
 		timer.start();
 		bench.run();
 		long time = timer.stop();
