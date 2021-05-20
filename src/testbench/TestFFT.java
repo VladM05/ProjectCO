@@ -8,7 +8,7 @@ public class TestFFT {
 	public static void main(String args[]) {
 		ITimer timer = new Timer();
 		ILogger log = new ConsoleLogger();
-		IBenchmark bench = new FFT();
+		FFT bench = new FFT();
 		
 		bench.initialize(1048576);
 		bench.warmUp();
