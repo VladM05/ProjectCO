@@ -16,8 +16,8 @@ public class SquareRootRunnable implements Runnable{
 
         int startnr;
         int endnr;
-        startnr=(thread*2500)+1;
-        endnr=(thread*2500)+2500;
+        startnr=(thread*1000000)+1;
+        endnr=(thread*1000000)+1000000;
         for (int i = startnr; i <= endnr; i++) {
             root = i;
             expression = (root * root) - i;

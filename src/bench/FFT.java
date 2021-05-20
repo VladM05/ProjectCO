@@ -207,6 +207,33 @@ public class FFT implements IBenchmark{
 	}
 
 	@Override
+	public void warmUp() {
+		Complex[] x = new Complex[n/4];
+
+		// original data
+		for (int i = 0; i < n/4; i++) {
+			x[i] = new Complex(i, 0);
+			x[i] = new Complex(-2 * Math.random() + 1, 0);
+		}
+		// FFT of original data
+		Complex[] y = fft(x);
+		//show(y, "y = fft(x)");
+
+		// take inverse FFT
+		Complex[] z = ifft(y);
+		//show(z, "z = ifft(y)");
+
+		// circular convolution of x with itself
+		Complex[] c = cconvolve(x, x);
+		//show(c, "c = cconvolve(x, x)");
+
+		// linear convolution of x with itself
+		Complex[] d = convolve(x, x);
+		//show(d, "d = convolve(x, x)");
+
+	}
+
+	@Override
 	public void clean() {
 		// TODO Auto-generated method stub
 		
