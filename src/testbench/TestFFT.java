@@ -5,6 +5,7 @@ import logging.*;
 import bench.*;
 
 public class TestFFT {
+
 	public static void main(String args[]) {
 		ITimer timer = new Timer();
 		ILogger log = new ConsoleLogger();

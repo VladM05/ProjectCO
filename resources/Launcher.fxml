@@ -18,7 +18,7 @@
                   <Image url="@SSRUMM-01.png" />
                </image>
             </ImageView>
-            <Button fx:id="Start" layoutX="25.0" layoutY="405.0" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #2a2a31; -fx-background-radius: 10;" text="Start" textFill="WHITE">
+            <Button fx:id="Start" onAction="#handleStartButton" layoutX="25.0" layoutY="405.0" mnemonicParsing="false" prefWidth="150.0" style="-fx-background-color: #2a2a31; -fx-background-radius: 10;" text="Start" textFill="WHITE">
                <font>
                   <Font name="Showcard Gothic" size="20.0" />
                </font>
@@ -69,7 +69,7 @@
                   <Font name="Showcard Gothic" size="19.0" />
                </font>
             </Label>
-            <Text fill="WHITE" layoutX="67.0" layoutY="402.0" style="-fx-background-color: 000000;" textAlignment="RIGHT" wrappingWidth="159.0">
+            <Text fx:id="cpuscore" fill="WHITE" layoutX="67.0" layoutY="402.0" style="-fx-background-color: 000000;" textAlignment="RIGHT" wrappingWidth="159.0">
                <font>
                   <Font name="Showcard Gothic" size="20.0" />
                </font>
