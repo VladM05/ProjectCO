@@ -39,7 +39,7 @@ public class TestBench {
         double score1 = Math.log(nr_cores*1000000)*(1000000000.0/Math.log(time1));
         double score2 = Math.log(nr_cores*nr_cores*1000000)*(1000000000.0/Math.log(time2));
         double score3 = Math.log(fftSize)*(1000000000.0/Math.log(time3));
-        double score = ((score1*0.33 + score2*0.33 + score3*0.34)/3)/20000.0;
+        double score = (( score1*0.33 + score2*0.33 + score3*0.34)/3)/20000.0;
 
         return (long)score;
     }
