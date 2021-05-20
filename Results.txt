@@ -1,1 +1,2 @@
-Hello, CO Project people!
+14381	AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD	Windows 10	AMD64	16	2021.05.20_15:32:16
+14382	AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD	Windows 10	AMD64   16	2021.05.20_15:32:42
