@@ -5,9 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import testbench.TestBench;
-import testbench.TestNewtonSquareRoot;
-import testbench.TestPopulateArray;
-import testbench.TestSquareRoot;
 
 public class Main extends Application {
 
