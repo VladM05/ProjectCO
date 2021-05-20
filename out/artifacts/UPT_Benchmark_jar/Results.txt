@@ -1,1 +1,0 @@
-14357	AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD	Windows 10	AMD64	16	2021.05.20_15:40:52
